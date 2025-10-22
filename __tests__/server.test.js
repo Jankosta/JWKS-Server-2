@@ -1,22 +1,7 @@
 const request = require('supertest');
-const fs = require('fs');
-const path = require('path');
-
-const DB_FILE = path.join(process.cwd(), 'totally_not_my_privateKeys.db');
-
-beforeAll(() => {
-});
-
-afterAll(() => {
-});
+const app = require('../server');
 
 describe('JWKS Server integration tests', () => {
-  let app;
-  beforeAll(() => {
-    // require the server
-    app = require('../server');
-  });
-
   test('GET /.well-known/jwks.json returns keys array with at least one key', async () => {
     const res = await request(app).get('/.well-known/jwks.json');
     expect(res.status).toBe(200);
