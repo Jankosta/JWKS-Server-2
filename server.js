@@ -1,3 +1,5 @@
+// Jacob Pavlick - jmp0586
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const jose = require('node-jose');
