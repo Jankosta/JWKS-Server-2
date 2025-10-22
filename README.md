@@ -12,9 +12,13 @@ The server stores PEM-serialized private keys in a SQLite database file named `t
 The database file is created in the repository root. Table schema:
 
 CREATE TABLE IF NOT EXISTS keys(
-kid INTEGER PRIMARY KEY AUTOINCREMENT,
-key BLOB NOT NULL,
-exp INTEGER NOT NULL
+
+  kid INTEGER PRIMARY KEY AUTOINCREMENT,
+
+  key BLOB NOT NULL,
+
+  exp INTEGER NOT NULL
+
 )
 
 ## How to run
