@@ -3,7 +3,7 @@
 This repository implements Project 2: a SQLite-backed JWKS (JSON Web Key Set) server that persists private keys in a local database and exposes:
 
 - GET /.well-known/jwks.json — public JWKs for all non-expired keys in the database
-- POST /auth[?expired=true] — issues a JWT signed with a private key from the database; when `expired=true` the server returns a JWT whose exp/iat are in the past (useful for testing)
+- POST /auth[?expired=true] — issues a JWT signed with a private key from the database; when `expired=true` the server returns a JWT whose exp/iat are in the past
 
 The server stores PEM-serialized private keys in a SQLite database file named `totally_not_my_privateKeys.db` and ensures on startup that at least one expired and one valid key exist.
 
