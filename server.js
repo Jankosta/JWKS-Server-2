@@ -115,7 +115,7 @@ function dbGet(sql, params = []) {
   });
 }
 
-// readiness middleware: delay handling until DB/keys are ready
+// delay handling until DB/keys are ready
 app.use((req, res, next) => {
   if (ready) return next();
   if (!readyPromise) return next();
@@ -253,3 +253,18 @@ readyPromise = openDatabase()
 
 // export for tests
 module.exports = app;
+
+// expose internal helpers for unit tests
+module.exports._test = {
+  saveKey,
+  getKeys,
+  getOneKey,
+  dbGet,
+  ensureKeysInDb,
+  openDatabase,
+};
+
+// expose DB for tests
+module.exports._getDb = function getDb() {
+  return db;
+};

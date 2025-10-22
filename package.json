@@ -1,10 +1,10 @@
 {
-  "name": "project1_javascript",
+  "name": "project2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest --coverage",
+  "test": "jest --coverage --runInBand",
     "start": "node server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

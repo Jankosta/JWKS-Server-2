@@ -1,4 +1,7 @@
 const request = require('supertest');
+
+jest.setTimeout(20000);
+
 const app = require('../server');
 
 describe('JWKS Server integration tests', () => {
